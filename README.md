@@ -11,20 +11,6 @@
 - So sánh mô hình pre-trained (từ Hugging Face) và mô hình tự code + tự train.
 - Hiển thị dự đoán, xác suất, và vector embedding để dễ hiểu nội bộ mô hình.
 
-## Cấu trúc thư mục
-transformer_fastapi_app/
-├── app/
-│   ├── init.py
-│   ├── main.py                  # FastAPI app chính
-│   ├── model.py                 # Mô hình BERT pre-trained
-│   ├── self_built_model.py      # Mô hình Transformer tự build
-│   └── templates/
-│       ├── index.html           # Trang cho BERT pre-trained
-│       └── self_built.html      # Trang cho mô hình tự build
-├── requirements.txt             # Dependencies
-├── train_self_built.py          # Script train mô hình tự build
-└── README.md
-
 
 ## Yêu cầu hệ thống & Cài đặt
 
@@ -109,7 +95,8 @@ python train_self_built.py
   Restart server → trang /self-built sẽ dùng model đã train.
 
 Mẹo & Nâng cao
-Muốn train nhanh hơn? Giảm EPOCHS = 3 hoặc BATCH_SIZE = 16 trong train_self_built.py.
+Muốn train nhanh hơn? 
+Giảm EPOCHS = 3 hoặc BATCH_SIZE = 16 trong train_self_built.py.
 Muốn 5 lớp thay vì binary? Chỉnh num_classes=5 và map label trong train script.
 Muốn cải thiện accuracy? Tăng d_model=512, num_layers=4, nhead=8 (cần GPU mạnh).
 Deploy: Dùng Docker hoặc Render/Heroku (cần file Procfile và requirements.txt)."# NLP_Transformer" 
