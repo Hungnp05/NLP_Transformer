@@ -34,3 +34,16 @@
     <p style="color: gray; margin-top: 30px;">Lưu ý: Mô hình này hiện dùng weights random (chưa train). Kết quả sẽ không chính xác cho đến khi bạn train nó trên dataset sentiment (IMDB, v.v.).</p>
 </body>
 </html>
+
+<script>
+    const input = document.getElementById("text");
+
+    window.onload = () => {
+        const savedText = localStorage.getItem("input_text");
+        if (savedText) input.value = savedText;
+    };
+
+    input.addEventListener("input", () => {
+        localStorage.setItem("input_text", input.value);
+    });
+</script>
