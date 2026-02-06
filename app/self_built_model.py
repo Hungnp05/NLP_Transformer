@@ -64,9 +64,13 @@ class SimpleTransformer(nn.Module):
         return logits
 
 # Khởi tạo model
-self_built_model = SimpleTransformer(num_classes=5)
+self_built_model = SimpleTransformer(num_classes=2)
 self_built_model.to(DEVICE)
 self_built_model.eval()
+
+self_built_model.load_state_dict(
+    torch.load(r"E:\code\NLP\self_built_sentiment_imdb.pt", map_location=DEVICE)
+)
 
 # Nếu đã train và có file model, uncomment dòng này:
 # self_built_model.load_state_dict(torch.load("self_built_sentiment_imdb.pt", map_location=DEVICE))

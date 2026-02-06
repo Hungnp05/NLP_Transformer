@@ -80,7 +80,7 @@ python train_self_built.py
 - Tự động tải dataset IMDB (25k train + 25k test).
 - Train 5 epochs (có thể chỉnh trong code).
 - Mỗi epoch in loss và accuracy trên test set.
-- Thời gian: CPU ~2–5 giờ, GPU ~20–60 phút.
+- Thời gian: CPU ~ 2–5 giờ (46 phút trên CPU i7 13650hx), GPU ~20–60 phút.
 
 4. Kết thúc:
 - File model được lưu: `self_built_sentiment_imdb.pt` (khoảng 30–50MB)
