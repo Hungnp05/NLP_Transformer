@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-built Transformer Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { width: 400px; padding: 10px; }
+        button { padding: 10px 20px; }
+        .result { border: 1px solid #ccc; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Transformer Tự Build & Tự Train</h1>
+    <p><a href="/"><button style="padding: 8px 16px;">Quay về trang BERT pre-trained</button></a></p>
+
+    <form action="/self-built-predict" method="post">
+        <label for="text">Nhập văn bản đầu vào:</label><br>
+        <input type="text" id="text" name="text" required><br><br>
+        <button type="submit">Dự đoán (Self-built)</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>Kết quả dự đoán:</h2>
+        <p><strong>Dự đoán:</strong> {{ result.prediction }}</p>
+        <p><strong>Xác suất:</strong> {{ result.probabilities }}</p>
+        <p><strong>Vector embedding (10 phần tử đầu):</strong> {{ result.vector }}</p>
+    </div>
+    {% endif %}
+
+    <p style="color: gray; margin-top: 30px;">Lưu ý: Mô hình này hiện dùng weights random (chưa train). Kết quả sẽ không chính xác cho đến khi bạn train nó trên dataset sentiment (IMDB, v.v.).</p>
+</body>
+</html>
